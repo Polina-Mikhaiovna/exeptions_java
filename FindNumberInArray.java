@@ -6,7 +6,7 @@
 
 import java.util.Scanner;
 
-public class Main {
+public class FindNumberInArray {
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5 };
         int min = 2;
