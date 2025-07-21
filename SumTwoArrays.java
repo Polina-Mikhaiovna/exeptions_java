@@ -2,6 +2,9 @@ public class SumTwoArrays {
     public static void main(String[] args) {
         int[] arr1 = { 1, 2, 3, 4, 5 };
         int[] arr2 = { 5, 4, 3, 2, 1 };
+        if(arr1.length != arr2.length){
+            throw new RuntimeException("Arrays are not equal length");
+        }
         int len = arr1.length;
         int[] res = new int[len];
 
@@ -11,10 +14,6 @@ public class SumTwoArrays {
         }
         System.out.println();
 
-    }
-
-    public static void checkArray(){
-        
     }
 
     public static int[] sumArrays(int[] arr1, int[] arr2) {
