@@ -7,6 +7,7 @@ public class SumTwoArrays {
             checkArraysLength(arr1, arr2);
             print2DArray(sumArrays(arr1, arr2));
             print2DArray(difArrays(arr1, arr2));
+            print2DArray(divArrays(arr1, arr2));
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
@@ -27,6 +28,18 @@ public class SumTwoArrays {
         int[] res = new int[len];
         for (int i = 0; i < len; i++) {
             res[i] = arr1[i] - arr2[i];
+        }
+        return res;
+    }
+
+    public static int[] divArrays(int[] arr1, int[] arr2) {
+        int len = arr1.length;
+        int[] res = new int[len];
+        for (int i = 0; i < len; i++) {
+            if(arr2[i] == 0){
+                throw new RuntimeException("One of diviver is 0");
+            }
+            res[i] = arr1[i] / arr2[i];
         }
         return res;
     }

@@ -1,3 +1,5 @@
+// Задача: Равны ли длины столбца и строки с одинаковым индексом?
+
 public class IsRowColsEqualLength {
     public static void main(String[] args) {
         Integer[][] matrix = { { 1, 2, 3, 4 },
@@ -26,20 +28,5 @@ public class IsRowColsEqualLength {
         }
 
     }
-    // int rows = matrix.length;
-    // int count = 0;
-    // for(int i = 0; i < rows; i++){
-    // for (int j = 0; j < rows; j++){
-    // if
-    // }
-    // if(rows == matrix[i].length){
-    // count++;
-    // }
-    // else throw new RuntimeException("Some pair of rows and columns have not equal
-    // length");
-    // break;
-    // }
-    // return count;
-    // }
 
 }
