@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -11,7 +12,8 @@ public class ReadSaveFile {
     public static void main(String[] args) {
         HashMap<String, Integer> nameInt = new HashMap<>();
         Path file = createPath();
-        nameInt = fileToHashMap(file);
+        nameInt = readFileToHashMap(file);
+        writeHashMapToFile(nameInt, file);
         printHashMap(nameInt);
     }
 
@@ -21,7 +23,7 @@ public class ReadSaveFile {
         return file;
     }
 
-    public static HashMap<String, Integer> fileToHashMap(Path file) {
+    public static HashMap<String, Integer> readFileToHashMap(Path file) {
         HashMap<String, Integer> nameInt = new HashMap<>();
         String[] tmp;
         int value;
@@ -33,6 +35,8 @@ public class ReadSaveFile {
                 value = tryParseInt(tmp[1]);
                 if (value == 0) {
                     nameInt.put(tmp[0], tmp[0].length());
+                    
+                    
                 } else {
                     nameInt.put(tmp[0], value);
                 }
@@ -51,6 +55,17 @@ public class ReadSaveFile {
             System.out.println(e.getMessage());
             return 0;
         }
+    }
+
+    public static void writeHashMapToFile(HashMap<String, Integer> map, Path file){
+       try(FileWriter fw = new FileWriter(file.toFile(), false)) {
+			for (String name : map.keySet()){
+                fw.write(name + "=" + map.get(name) + "\n");
+            }
+            fw.flush();
+		} catch(IOException ex) {
+			System.out.println(ex.getMessage());
+		}
     }
 
     public static void printHashMap(HashMap<String, Integer> nameInt) {
