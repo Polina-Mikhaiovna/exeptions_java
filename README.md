@@ -1,1 +1,1 @@
-# exeptions_java
+# exceptions_java
