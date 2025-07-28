@@ -1,3 +1,4 @@
+package MyExceptions;
 import java.io.IOException;
 
 public class Counter implements AutoCloseable {
